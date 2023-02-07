@@ -15,7 +15,7 @@ public class PostEffect : MonoBehaviour
 
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-        if(occlusionManager!=null){
+        if(occlusionManager.humanStencilTexture != null){
             _material.SetTexture("_StencilTex",occlusionManager.humanStencilTexture);
             Graphics.Blit(source, destination, _material);
         }
