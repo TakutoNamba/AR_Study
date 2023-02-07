@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private float waitingTime;
     private bool isScanReady;
     private bool isTextMain;
+    public PostEffect postEffect;
   
 
     public enum APP_STATUS
@@ -35,14 +36,14 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        if (occlusionManager.humanStencilTexture != null && isScanReady == false)
+        if (postEffect.isThereHuman && isScanReady == false)
         {
             isScanReady = true;
             iTween.ValueTo(gameObject, iTween.Hash("from", 1, "to", 0, "time", .1f, "onupdate", "ChangeIconOpacity"));
             iTween.ValueTo(gameObject, iTween.Hash("from", MainText.GetComponent<CanvasGroup>().alpha, "to", 0, "time", .1f, "onupdate", "ChangeMainTextOpacity"));
             iTween.ValueTo(gameObject, iTween.Hash("from", SubText.GetComponent<CanvasGroup>().alpha, "to", 0, "time", .1f, "onupdate", "ChangeSubTextOpacity"));
         }
-        else if(occlusionManager.humanStencilTexture == null && isScanReady == true)
+        else if(!postEffect.isThereHuman && isScanReady == true)
         {
             isScanReady = false;
             iTween.ValueTo(gameObject, iTween.Hash("from", 0, "to", 1, "time", .1f, "onupdate", "ChangeIconOpacity"));

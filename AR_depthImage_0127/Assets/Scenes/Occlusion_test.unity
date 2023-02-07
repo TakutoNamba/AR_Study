@@ -2844,6 +2844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   occlusionManager: {fileID: 982407738}
   _material: {fileID: 2100000, guid: ae214fa748d273f4d8e5a10ca3675899, type: 2}
+  isThereHuman: 0
 --- !u!1 &996731861
 GameObject:
   m_ObjectHideFlags: 0
@@ -5111,6 +5112,7 @@ MonoBehaviour:
   MainText: {fileID: 1822074457}
   SubText: {fileID: 1456245511}
   waitingTime: 0
+  postEffect: {fileID: 982407744}
 --- !u!4 &1699093662
 Transform:
   m_ObjectHideFlags: 0
