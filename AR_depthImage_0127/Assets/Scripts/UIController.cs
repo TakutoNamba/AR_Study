@@ -56,13 +56,13 @@ public class UIController : MonoBehaviour
             {
                 status = APP_STATUS.WARN;
                 StartCoroutine(ChangeMainToSub());
-                Debug.Log("MainToSub");
+                //Debug.Log("MainToSub");
             }
             if(waitingTime >= 0 && waitingTime <= 5 && status == APP_STATUS.WARN)
             {
                 status = APP_STATUS.WAIT;
                 StartCoroutine(ChangeSubToMain());
-                Debug.Log("SubToMain");
+                //Debug.Log("SubToMain");
             }
 
             if(waitingTime > 10)

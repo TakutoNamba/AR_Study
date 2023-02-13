@@ -35,6 +35,7 @@ public class PostEffect : MonoBehaviour
     {
         if(occlusionManager.humanStencilTexture != null){
             checkStencilTex();
+            Debug.Log(isThereHuman);
             if(isThereHuman)
             {
                 _material.SetTexture("_StencilTex", occlusionManager.humanStencilTexture);
